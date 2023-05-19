@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+<style>
+    [v-cloak] {
+        display: none;
+    }
+</style>
+
+
+<div id = "app">
+    <div class = "container">
+      <br>
+      <br>
+        <h1>{{greeting}}</h1>    
+        <h1>{{greeting2}}</h1>
+        <form class = "mt-5">
+            <div class = "form-group">
+                <label for = "email">Email</label>
+                <input type = "email" v-model = "email" class = "form-control form-control-lg">
+                <br>
+                <label for = "password">Password</label>
+                <input type = "password" v-model = "password" class = "form-control form-control-lg">
+                <font color="red">{{result}}</font>
+            </div>
+            <br>
+            <button type = "submit" @click.prevent = "process" class  = "btn btn-primary">Submit</button>
+            <button type = "clear" @click.prevent = "clear" class  = "btn btn-primary">Clear</button>
+        </form>
+    </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data: {
+             greeting: 'Penn Lost & Found',
+             greeting2: 'Admin Login',
+             email: '',
+             password: '',
+             result: ''
+        },
+        methods: {
+            process: function(event){
+                if (this.email.includes('@')) {
+                    this.login(event);
+                } else {
+                    this.result = "Invalid email: needs @ symbol";
+                }
+            },
+            clear: function(event){
+                this.email = "";
+                this.password = "";
+                this.result = "";
+            },
+            login: function(event){
+                  const Http = new XMLHttpRequest();
+                  const url = "http://localhost:3000/get-admin?" + "username=" + this.email + "&password=" + this.password;
+                  Http.open("GET", url, true);
+                  Http.send();
+                  Http.onreadystatechange = (e) => {
+                      var response = Http.responseText;
+                      var json = JSON.parse(response);
+                      var status = json.status;
+                      if (status === "success") {
+                          
+                          window.location = "index.html" + "?admin=" + encodeURIComponent(this.email);
+                      } else if (status === "incorrect password") {
+                          this.result = "Incorrect password";
+                      } else if (status === "no admin") {
+                          this.result = "Admin account does not exist";
+                      }
+                  }
+            }
+        }
+    });
+
+</script>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E1FADE"
+    android:backgroundTint="#E1FADE"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/filler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorGreen" />
+
+    <TextView
+        android:id="@+id/make_post_title"
+        android:layout_width="match_parent"
+        android:layout_height="93dp"
+        android:background="@color/colorGreen"
+        android:fontFamily="@font/oswald_bold"
+        android:text="Making New Post"
+        android:textAlignment="center"
+        android:textColor="#170204"
+        android:textSize="36sp" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="62dp" />
+
+    <TextView
+        android:id="@+id/make_post_q"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Did you..."
+        android:textAlignment="center"
+        android:textSize="30sp"
+        android:textStyle="italic" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="52dp" />
+
+    <Button
+        android:id="@+id/post_lose"
+        android:layout_width="277dp"
+        android:layout_height="114dp"
+        android:background="@color/colorLost"
+        android:onClick="onLoseClick"
+        android:text="Lose an item? \n(make sure you check found items first to see if someone found it!)"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="72dp" />
+
+    <Button
+        android:id="@+id/post_find"
+        android:layout_width="281dp"
+        android:layout_height="102dp"
+        android:background="@color/colorFound"
+        android:onClick="onFindClick"
+        android:text="Find an item? \n(make sure you check lost items first to see if it's already posted!)"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+</LinearLayout>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/customborder"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        android:background="@color/colorPrimary"
+        android:text="TextView"
+        android:textColor="@color/colorPrimary" />
+
+    <TextView
+        android:id="@+id/lost_item_category2"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:background="@color/colorPrimary"
+        android:fontFamily="@font/libre_franklin_thin"
+        android:text="You lost an item"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="15dp" />
+
+    <TextView
+        android:id="@+id/lost_description_q"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/libre_franklin_thin"
+        android:text="  Description:"
+        android:textAlignment="center"
+        android:textColor="#130202"
+        android:textSize="36sp" />
+
+    <EditText
+        android:id="@+id/lost_description"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:layout_marginHorizontal="40dp"
+        android:ems="10"
+        android:hint="Color, size, recognizable features, etc."
+        android:inputType="textPersonName" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="15dp" />
+
+    <TextView
+        android:id="@+id/lost_addinfo_q"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:fontFamily="@font/libre_franklin_thin"
+        android:text="  Additional Info:"
+        android:textAlignment="center"
+        android:textColor="#130202"
+        android:textSize="36sp" />
+
+    <EditText
+        android:id="@+id/lost_addinfo"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:layout_marginHorizontal="50dp"
+        android:ems="10"
+        android:hint="Anything else?"
+        android:inputType="textPersonName" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="15dp" />
+
+    <TextView
+        android:id="@+id/lost_upload_image"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:fontFamily="@font/libre_franklin_thin"
+        android:onClick="onUploadImageClick"
+        android:text="Please upload an image:"
+        android:textAlignment="center"
+        android:textColor="#130202"
+        android:textSize="36sp" />
+
+    <Button
+        android:id="@+id/uploadImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#80008577"
+        android:layout_gravity="center"
+        android:onClick="onUploadImageClick"
+        android:text="Upload" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="12dp" />
+
+    <ImageView
+        android:id="@+id/lostImageView"
+        android:layout_width="match_parent"
+        android:layout_height="141dp" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="12dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#016C61"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_marginHorizontal="2dp"
+            android:layout_marginTop="2dp"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
+            android:fontFamily="@font/libre_franklin_medium"
+            android:onClick="onMakeLostClick"
+            android:text="Create Post"
+            android:textColor="#FFFFFF" />
+
+    </LinearLayout>
+
+</LinearLayout>
